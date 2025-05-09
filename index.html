@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klasemen Liga PES</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="judulTurnamen">Turnamen Liga PES</h1>
+
+    <div class="form-group" id="formNamaLiga">
+      <input type="text" id="namaLiga" placeholder="Masukkan Nama Turnamen" />
+      <button onclick="setNamaLiga()" class="btn btn-primary">Set Nama Turnamen</button>
+    </div>
+
+    <div class="form-group" id="formJumlahTim">
+      <input type="number" id="jumlahTim" placeholder="Jumlah Tim" />
+      <button onclick="generateInputTim()" class="btn btn-primary">Lanjut Input Tim</button>
+    </div>
+
+    <div class="form-group" id="formInputTim"></div>
+    <div class="form-group" id="btnSimpanTim"></div>
+
+    <div class="form-group" id="formInputPertandingan" style="display:none">
+      <h2>Input Pertandingan</h2>
+      <div class="flex-row">
+        <select id="timA"></select>
+        <input type="number" id="skorA" placeholder="0" />
+        <input type="number" id="skorB" placeholder="0" />
+        <select id="timB"></select>
+      </div>
+      <div class="btn-row">
+        <button onclick="inputPertandingan()" class="btn btn-success">Simpan Pertandingan</button>
+      </div>
+    </div>
+
+    <div class="tables-row">
+      <div class="table-container">
+        <h2>Hasil Pertandingan</h2>
+        <table>
+          <thead><tr><th>#</th><th>Tim A</th><th>Skor</th><th>Tim B</th></tr></thead>
+          <tbody id="tabelPertandingan"></tbody>
+        </table>
+      </div>
+
+      <div class="table-container">
+        <h2>Klasemen</h2>
+        <table>
+          <thead><tr><th>Pos</th><th>Tim</th><th>M</th><th>W</th><th>D</th><th>L</th><th>GF</th><th>GA</th><th>GD</th><th>Poin</th></tr></thead>
+          <tbody id="tabelKlasemen"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="bottom-buttons">
+      <button onclick="undoPertandingan()" class="btn btn-warning">Undo Pertandingan</button>
+      <button onclick="resetKlasemen()" class="btn btn-danger">Reset Klasemen</button>
+      <button onclick="kembaliKeMenuAwal()" class="btn btn-secondary">Kembali ke Menu Awal</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
